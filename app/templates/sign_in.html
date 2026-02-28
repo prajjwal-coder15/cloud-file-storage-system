@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in to Cloud - Drive</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family:'Inter', sans-serif;
+    }
+
+    body {
+      background: #ffffff;
+      display: flex;
+      min-height: 100vh;
+      color: #111;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+    }
+
+    /* LEFT SIDE */
+    .left {
+      width: 40%;
+      padding: 60px 80px;
+      background: #fffefe;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 40px;
+    }
+
+    .logo span {
+      color: rgb(15, 1, 1);
+    }
+
+    .left h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .left p {
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .google-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 1px solid #ccc;
+      padding: 12px;
+      border-radius: 6px;
+      background: white;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .google-btn:hover {
+      background: #e9e9e9;
+    }
+
+    .divider {
+      text-align: center;
+      margin: 25px 0;
+      position: relative;
+      color: #888;
+      font-size: 14px;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 40%;
+      height: 1px;
+      background: #ddd;
+    }
+
+    .divider::before {
+      left: 0;
+    }
+
+    .divider::after {
+      right: 0;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #d1c9c9;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #000;
+    }
+
+    .forgot {
+      text-align: right;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    .forgot a {
+      text-decoration: none;
+      color: #1392f3;
+    }
+
+    .forgot a:hover {
+      text-decoration: underline;
+      color: #3ce47a;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 14px;
+      background: #000;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.4s;
+    }
+
+    .login-btn:hover {
+      background: #30ab37;
+    }
+
+    .signup {
+      margin-top: 20px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .signup a {
+      color: #000;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .signup a:hover {
+      text-decoration: underline;
+    }
+
+    .right {
+  width: 100%;
+  background: #ffffff;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Image wrapper */
+.top-image {
+  width: 100%;      /* Clean fixed width */
+  max-width: 100%;
+  margin-top: 40px;  /* Push slightly down */
+}
+
+.top-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Hero section */
+.hero-content {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.hero-content p {
+  font-size: 16px;
+  color: #666;
+}
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left, .right {
+        width: 100%;
+      }
+
+      .hero-content {
+        margin-top: 140px;
+      }
+
+      .hero-content h2 {
+        font-size: 32px;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="left">
+        <h1>Sign in to Cloud - Drive</h1>
+        <p>Access your personalized dashboard and explore new opportunities.</p>
+    
+        <button class="google-btn">
+            <img src="https://www.svgrepo.com/show/475656/google-color.svg" width="18">
+            Log in with Google
+        </button>
+    
+        <div class="divider">or Login with Email</div>
+        <form id="loginForm" method="POST">
+
+  <div class="form-group">
+    <input 
+      type="email" 
+      name="email"
+      placeholder="Email address" 
+      required>
+  </div>
+
+  <div class="form-group">
+    <input 
+      type="password" 
+      name="password" 
+      placeholder="Password" 
+      required>
+  </div>
+
+  <div class="forgot">
+    <a href="#">Forgot password?</a>
+  </div>
+
+  <button class="login-btn" type="submit">Log in</button>
+
+</form>
+      <div class="signup">
+        Not registered? <a href="{{ url_for('main.sign_up') }}">Create an Account</a>
+      </div>
+    </div>
+
+    <div class="right">
+
+      <!-- Added Image -->
+      <div class="top-image">
+        <img src="{{ url_for('static', filename='images/3i.png') }}" alt="Decorative Shapes" width="100">
+      </div>
+
+        <!-- Hero Content -->
+        <div class="hero-content" style="position: absolute; top: 90%; left: 50%; transform: translate(-50%, -50%);">
+          <h2>Welcome Back to Cloud - Drive</h2>
+          <p>Your secure cloud storage solution for effortless file management and sharing.</p>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
